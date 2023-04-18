@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Pocket Chief</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Welcome fragment -->
+    <string name="wlcTitleText">Пора стать шеф-поваром :)</string>
+    <string name="wlcDescriptionText">Хватит быть просто любителем, начните готовить
+                                      профессиональные блюда прямо на своей кухне. А
+                                      мы поможем Вам с выбором рецепта!</string>
+    <string name="wlcButtonText">Продолжить</string>
+
+
 </resources>
