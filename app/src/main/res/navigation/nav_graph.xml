@@ -16,8 +16,8 @@
     </fragment>
     <fragment
         android:id="@+id/authenticationFragment"
-        android:name="ru.zaycev.pocketchief.view.AuthenticationFragment"
+        android:name="ru.zaycev.pocketchief.view.AuthFragment"
         android:label="fragment_authentication"
-        tools:layout="@layout/fragment_authentication" />
+        tools:layout="@layout/fragment_auth" />
 
 </navigation>

@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import ru.zaycev.pocketchief.R
 
 class WelcomeFragment : Fragment() {
-    private lateinit var button: Button
+    private lateinit var continueButton: Button
 
     private val shared: SharedPreferences by lazy {
         requireContext().getSharedPreferences("FirstOpenCheck", Context.MODE_PRIVATE)
@@ -28,9 +28,9 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button = requireView().findViewById(R.id.welcomeButton)
+        continueButton = requireView().findViewById(R.id.welcomeButton)
 
-        button.setOnClickListener {
+        continueButton.setOnClickListener {
             findNavController().navigate(R.id.action_welcomeFragment_to_authenticationFragment)
         }
     }
