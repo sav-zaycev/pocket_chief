@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import ru.zaycev.pocketchief.R
+import ru.zaycev.pocketchief.view.adapter.FragmentPageAdapter
 
 class AuthFragment : Fragment() {
     private val tabLayout: TabLayout by lazy { requireView().findViewById(R.id.authTabLayout) }
@@ -27,6 +28,27 @@ class AuthFragment : Fragment() {
             "Вход",
             "Регистрация"
         ))
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                if (tab != null) {
+                    viewPager.currentItem = tab.position
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {  }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {  }
+        })
+
+        viewPager.adapter = FragmentPageAdapter(childFragmentManager, lifecycle)
+
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                tabLayout.selectTab(tabLayout.getTabAt(position))
+            }
+        })
     }
 
     private fun TabLayout.setTabs(tabsName: Array<String>) {
