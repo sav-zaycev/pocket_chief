@@ -1,7 +1,7 @@
 <resources>
     <style name="Theme.PocketChief" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Base items -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/teal_200</item>
