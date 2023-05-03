@@ -1,7 +1,6 @@
 package ru.zaycev.pocketchief.view
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import ru.zaycev.pocketchief.R
 
-class LoginFragment : Fragment() {
+class SignInFragment : Fragment() {
     private lateinit var loginEdit: TextInputEditText
     private lateinit var loginInputLayout: TextInputLayout
 
@@ -21,14 +20,14 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_sign_in, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loginEdit = requireView().findViewById(R.id.loginEditEmail)
-        loginInputLayout = requireView().findViewById(R.id.loginLayoutEmail)
+        loginEdit = requireView().findViewById(R.id.signInEditEmail)
+        loginInputLayout = requireView().findViewById(R.id.signInLayoutEmail)
 
         loginEdit.addTextChangedListener {
             val login: String = loginEdit.text.toString()

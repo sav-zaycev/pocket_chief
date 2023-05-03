@@ -26,19 +26,19 @@
         android:fontFamily="@font/roboto_bold"
         android:textColor="@color/white"
         android:textSize="32sp"
-        android:text="@string/wlcTitleText"
+        android:text="@string/welcome_title_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeChiefImage" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/loginOrTitle"
+        android:id="@+id/signInOrTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_light"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:text="@string/wlcDescriptionText"
+        android:text="@string/welcome_description_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeTitleText" />
 
@@ -52,8 +52,8 @@
         android:fontFamily="@font/roboto_bold"
         android:textColor="@color/orange"
         android:textSize="16sp"
-        android:text="@string/wlcButtonText"
+        android:text="@string/welcome_button_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginOrTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/signInOrTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

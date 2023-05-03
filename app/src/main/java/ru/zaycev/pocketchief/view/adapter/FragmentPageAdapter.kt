@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import ru.zaycev.pocketchief.view.LoginFragment
-import ru.zaycev.pocketchief.view.RegistrationFragment
+import ru.zaycev.pocketchief.view.SignInFragment
+import ru.zaycev.pocketchief.view.RegFragment
 
 class FragmentPageAdapter(
     fragmentManager: FragmentManager,
@@ -17,9 +17,9 @@ class FragmentPageAdapter(
 
     override fun createFragment(position: Int): Fragment {
         return if (position == 0) {
-            LoginFragment()
+            SignInFragment()
         } else {
-            RegistrationFragment()
+            RegFragment()
         }
     }
 }

@@ -2,6 +2,6 @@
     android:viewportWidth="24" android:width="28dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#00000000"
         android:pathData="M12,8.45V12.45M12,21C7.029,21 3,16.971 3,12C3,7.029 7.029,3 12,3C16.971,3 21,7.029 21,12C21,16.971 16.971,21 12,21ZM12.05,15.45V15.55L11.95,15.55V15.45H12.05Z"
-        android:strokeColor="#000000" android:strokeLineCap="round"
-        android:strokeLineJoin="round" android:strokeWidth="2.4"/>
+        android:strokeColor="@color/white_60" android:strokeLineCap="round"
+        android:strokeLineJoin="round" android:strokeWidth="2.2"/>
 </vector>

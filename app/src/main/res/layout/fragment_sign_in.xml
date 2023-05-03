@@ -8,22 +8,22 @@
     android:paddingStart="?attr/paddingStart"
     android:paddingEnd="?attr/paddingEnd"
     android:background="@color/orange"
-    tools:context=".view.LoginFragment">
+    tools:context=".view.SignInFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginLayoutEmail"
+        android:id="@+id/signInLayoutEmail"
         style="@style/customTextLayout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:hint="Логин (email)"
-        app:boxStrokeColor="@color/textinpute_outline_color"
+        android:hint="@string/login"
+        app:boxStrokeColor="@color/text_input_outline_color"
         app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loginEditEmail"
+            android:id="@+id/signInEditEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/roboto_regular"
@@ -32,88 +32,87 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginLayoutPassword"
+        android:id="@+id/signInLayoutPassword"
         style="@style/customTextLayout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="8dp"
-        android:hint="Пароль"
+        android:hint="@string/password"
         app:endIconMode="password_toggle"
-        app:boxStrokeColor="@color/textinpute_outline_color"
+        app:boxStrokeColor="@color/text_input_outline_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginLayoutEmail">
+        app:layout_constraintTop_toBottomOf="@+id/signInLayoutEmail">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loginEditPassword"
+            android:id="@+id/signInEditPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/loginRestorePassword"
+        android:id="@+id/signInForwardPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_light"
-        android:text="Забыли пароль?"
+        android:text="@string/sign_in_forward_password"
         android:textColor="@color/white_60"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/loginLayoutPassword"
-        app:layout_constraintTop_toBottomOf="@+id/loginLayoutPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/signInLayoutPassword"
+        app:layout_constraintTop_toBottomOf="@+id/signInLayoutPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/loginButton"
+        android:id="@+id/regButton"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/bg_white_button"
         android:fontFamily="@font/roboto_bold"
-        android:text="Войти"
+        android:text="@string/sign_in"
         android:textAllCaps="false"
         android:textColor="@color/orange"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/loginRestorePassword"
+        app:layout_constraintTop_toBottomOf="@+id/signInForwardPassword"
         tools:layout_editor_absoluteX="32dp" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/loginOrTitle"
+        android:id="@+id/signInOrTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto_light"
-        android:text="или"
+        android:text="@string/or"
         android:textColor="@color/white_60"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/regButton" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/loginWithGoogle"
+        android:id="@+id/signInWithGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/sign_in_with_google"
+        android:textColor="@color/white_60"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signInOrTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/signInAsGuest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_regular"
-        android:text="Войти с помощью Google"
         android:textColor="@color/white_60"
         android:textSize="16sp"
+        android:text="@string/sign_in_as_guest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginOrTitle" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/loginAsGuest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/roboto_regular"
-        android:textColor="@color/white_60"
-        android:textSize="16sp"
-        android:text="Войти как гость"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginWithGoogle" />
+        app:layout_constraintTop_toBottomOf="@+id/signInWithGoogle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
