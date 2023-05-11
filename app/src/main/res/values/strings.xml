@@ -25,5 +25,7 @@
     <string name="require_two">только буквы лат. алфавита (a–z) и арабске цифры (0–9)</string>
     <string name="require_three">не менее 1 заглавной буквы</string>
     <string name="require_four">не менее 1 спец.символа ($&amp;.-/*)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

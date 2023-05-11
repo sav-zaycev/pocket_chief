@@ -18,6 +18,15 @@
         android:id="@+id/authenticationFragment"
         android:name="ru.zaycev.pocketchief.view.AuthFragment"
         android:label="fragment_authentication"
-        tools:layout="@layout/fragment_auth" />
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authenticationFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="ru.zaycev.pocketchief.view.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" />
 
 </navigation>

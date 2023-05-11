@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ru.zaycev.pocketchief.R
-import ru.zaycev.pocketchief.view.data.PasswordRequirement
+import ru.zaycev.pocketchief.data.PasswordRequirement
 
 class PasswordRequirementsAdapter(
     private val requirements: ArrayList<PasswordRequirement>

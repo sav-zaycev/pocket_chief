@@ -1,4 +1,4 @@
-package ru.zaycev.pocketchief.view.data
+package ru.zaycev.pocketchief.data
 
 class PasswordRequirement(
     val text: String,

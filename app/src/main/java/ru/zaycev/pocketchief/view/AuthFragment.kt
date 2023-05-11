@@ -5,14 +5,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 import ru.zaycev.pocketchief.R
 import ru.zaycev.pocketchief.view.adapter.FragmentPageAdapter
+
 
 class AuthFragment : Fragment() {
     private val tabLayout: TabLayout by lazy { requireView().findViewById(R.id.authTabLayout) }
     private val viewPager: ViewPager2 by lazy { requireView().findViewById(R.id.authViewPager) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            findNavController().navigate(R.id.action_authenticationFragment_to_mainPageFragment)
+        }
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
