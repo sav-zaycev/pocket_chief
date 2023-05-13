@@ -21,7 +21,7 @@ class AuthFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         if (FirebaseAuth.getInstance().currentUser != null) {
-            findNavController().navigate(R.id.action_authenticationFragment_to_mainPageFragment)
+            //findNavController().navigate(R.id.action_authenticationFragment_to_mainPageFragment)
         }
 
     }

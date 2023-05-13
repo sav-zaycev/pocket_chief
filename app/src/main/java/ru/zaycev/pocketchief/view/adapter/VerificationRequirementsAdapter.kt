@@ -8,11 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ru.zaycev.pocketchief.R
-import ru.zaycev.pocketchief.data.PasswordRequirement
+import ru.zaycev.pocketchief.data.VerificationRequirement
 
-class PasswordRequirementsAdapter(
-    private val requirements: ArrayList<PasswordRequirement>
-) : RecyclerView.Adapter<PasswordRequirementsAdapter.RequirementsViewHolder>() {
+class VerificationRequirementsAdapter() : RecyclerView.Adapter<VerificationRequirementsAdapter.RequirementsViewHolder>() {
+    private var requirements: List<VerificationRequirement> = listOf()
 
     class RequirementsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val requirementText: TextView = itemView.findViewById(R.id.regRequirementText)
@@ -28,7 +27,7 @@ class PasswordRequirementsAdapter(
         holder.run {
             requirementText.text = requirements[position].text
 
-            if (requirements[position].isRight) {
+            if (requirements[position].state) {
                 icon.setImageResource(R.drawable.ic_check_white)
                 requirementText.setTextColor(Color.parseColor("#FFFFFFFF"))
             } else {
@@ -42,4 +41,8 @@ class PasswordRequirementsAdapter(
         return requirements.size
     }
 
+    fun setData(requirements: List<VerificationRequirement>) {
+        this.requirements = requirements
+        this.notifyDataSetChanged()
+    }
 }
