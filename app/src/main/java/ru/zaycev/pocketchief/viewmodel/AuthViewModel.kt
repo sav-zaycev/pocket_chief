@@ -5,6 +5,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Patterns
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import ru.zaycev.pocketchief.data.VerificationRequirement
@@ -31,14 +32,14 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-    fun isPasswordValid(): Boolean {
+    private fun isPasswordValid(): Boolean {
         for (index in requirementPasswordList.indices) {
             if (!requirementPasswordList[index].state) return false
         }
         return true
     }
 
-    fun inNetworkAvailable(): Boolean {
+    private fun inNetworkAvailable(): Boolean {
         val connectivityManager: ConnectivityManager = getApplication<Application>()
             .applicationContext
             .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -63,5 +64,17 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
             VerificationRequirement("не менее 1 заглавной буквы", "[A-Z]"),
             VerificationRequirement("не менее 1 спец.символа ($&.-/*)", "[$&.-/*]")
         )
+    }
+
+    fun newRegistrationUser(email: String, password: String) {
+        if (inNetworkAvailable()) {
+            if (isEmailValid(email) && isPasswordValid()) {
+                firebaseRepository.registrationUser(email, password) { authResult: Boolean ->
+                    if (authResult) {
+                        println("")
+                    }
+                }
+            }
+        }
     }
 }

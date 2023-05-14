@@ -90,31 +90,33 @@ class RegFragment : Fragment() {
         }
 
         buttonReg.setOnClickListener {
-            registrationUser(email, password)
+            viewModel.newRegistrationUser(email, password)
         }
     }
 
-    private fun registrationUser(email: String, password: String) {
-        // Проверяю соединение с интернетом, в случае неудачи показываю предупреждение
-        if (viewModel.inNetworkAvailable()) {
-            // Проверяю соответствие логина и пароля, в случае неудачи показываю предупреждение
-            if (viewModel.isEmailValid(email) && viewModel.isPasswordValid()) {
-                // Произвожу регистрацию, в случае возврата перехожу на главную страницу, иначе
-                // показываю соответствующее предупреждение
-                viewModel.registrationUser(email, password) { authResult: Boolean ->
-                    // Использую обратный вызов для получения Task (результат регистрации),
-                    // поскольку регистрации производит асинхронно, путем обратного вызова
-                    if (authResult) {
-                        findNavController().navigate(R.id.action_authenticationFragment_to_mainPageFragment)
-                    } else {
-                        Toast.makeText(context,"Пользователь с указанным адресом электронной почты уже зарегистрирован!", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            } else {
-                Toast.makeText(context,"Пожалуйста, проверьте правильность введенных данных.", Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            Toast.makeText(context, "Пожалуйста, проверьте подключение к интернету и повторите попытку.", Toast.LENGTH_SHORT).show()
-        }
-    }
+
+
+//    private fun registrationUser(email: String, password: String) {
+//        // Проверяю соединение с интернетом, в случае неудачи показываю предупреждение
+//        if (viewModel.inNetworkAvailable()) {
+//            // Проверяю соответствие логина и пароля, в случае неудачи показываю предупреждение
+//            if (viewModel.isEmailValid(email) && viewModel.isPasswordValid()) {
+//                // Произвожу регистрацию, в случае возврата перехожу на главную страницу, иначе
+//                // показываю соответствующее предупреждение
+//                viewModel.registrationUser(email, password) { authResult: Boolean ->
+//                    // Использую обратный вызов для получения Task (результат регистрации),
+//                    // поскольку регистрации производит асинхронно, путем обратного вызова
+//                    if (authResult) {
+//                        findNavController().navigate(R.id.action_authenticationFragment_to_mainPageFragment)
+//                    } else {
+//                        Toast.makeText(context,"Пользователь с указанным адресом электронной почты уже зарегистрирован!", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            } else {
+//                Toast.makeText(context,"Пожалуйста, проверьте правильность введенных данных.", Toast.LENGTH_SHORT).show()
+//            }
+//        } else {
+//            Toast.makeText(context, "Пожалуйста, проверьте подключение к интернету и повторите попытку.", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 }
