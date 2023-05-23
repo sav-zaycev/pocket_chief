@@ -15,6 +15,6 @@ class VerificationRequirement(
 ) {
     /** Метод служит для проверки, выполняет ли переданная строка заданое условие. */
     fun checkCondition(stringToCheck: String) {
-        this.state = Regex(condition).containsMatchIn(stringToCheck)
+        this.state = Regex(this@VerificationRequirement.condition).containsMatchIn(stringToCheck)
     }
 }

@@ -2,35 +2,26 @@ package ru.zaycev.pocketchief.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
+import androidx.lifecycle.ViewModelProvider
+import by.kirich1409.viewbindingdelegate.viewBinding
 import ru.zaycev.pocketchief.R
+import ru.zaycev.pocketchief.databinding.FragmentMainPageBinding
+import ru.zaycev.pocketchief.viewmodel.MainViewModel
 
-class MainPageFragment : Fragment() {
-    private lateinit var mAuth: FirebaseAuth
-    private var userID: String = ""
+class MainPageFragment : Fragment(R.layout.fragment_main_page) {
+    private lateinit var viewModel: MainViewModel
+
+    private val binding by viewBinding(FragmentMainPageBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        mAuth = FirebaseAuth.getInstance()
-
-        userID = mAuth.currentUser!!.uid
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_main_page, container, false)
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onResume() {
-        super.onResume()
 
-        Toast.makeText(requireContext(), userID, Toast.LENGTH_LONG).show()
     }
 }

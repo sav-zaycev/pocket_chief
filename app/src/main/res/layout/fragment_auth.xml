@@ -1,48 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/orange"
-    tools:context=".view.AuthFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/appCompatImageView"
-        android:layout_width="295dp"
-        android:layout_height="185dp"
-        android:layout_marginTop="54dp"
-        android:src="@drawable/table_appointments"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/authTabLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="?attr/paddingStart"
-        android:layout_marginEnd="?attr/paddingEnd"
-        android:background="@drawable/bg_auth_tablayout"
-        app:tabIndicatorHeight="32dp"
-        app:tabIndicatorGravity="center"
-        app:tabIndicator="@drawable/bg_white_button"
-        app:tabIndicatorColor="@color/white"
-        app:tabTextColor="@color/orange_60"
-        app:tabTextAppearance="@style/tabText"
-        app:tabSelectedTextColor="@color/orange"
-        app:tabSelectedTextAppearance="@style/tabSelectedText"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"/>
+        android:layout_height="match_parent"
+        android:background="@color/orange"
+        tools:context=".view.AuthFragment">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/authViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_marginTop="27dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authTabLayout" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="295dp"
+            android:layout_height="185dp"
+            android:layout_marginTop="54dp"
+            android:src="@drawable/table_appointments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/authTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="?attr/paddingStart"
+            android:layout_marginEnd="?attr/paddingEnd"
+            android:background="@drawable/bg_auth_tablayout"
+            app:tabIndicatorHeight="32dp"
+            app:tabIndicatorGravity="center"
+            app:tabIndicator="@drawable/bg_white_button"
+            app:tabIndicatorColor="@color/white"
+            app:tabTextColor="@color/orange_60"
+            app:tabTextAppearance="@style/tabText"
+            app:tabSelectedTextColor="@color/orange"
+            app:tabSelectedTextAppearance="@style/tabSelectedText"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/authViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/authTabLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -10,7 +10,6 @@ class MarginItemDecorator(
     private val marginRight: Int = 0,
     private val marginBottom: Int = 0
 ) : RecyclerView.ItemDecoration() {
-
     override fun getItemOffsets(
         outRect: Rect,
         view: View,

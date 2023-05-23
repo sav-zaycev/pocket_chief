@@ -1,6 +1,6 @@
 package ru.zaycev.pocketchief.data
 
 class User(
-    var name: String
-) {
-}
+    email: String = "",
+    password: String = ""
+) {}
